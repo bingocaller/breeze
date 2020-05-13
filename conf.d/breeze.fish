@@ -40,7 +40,7 @@ abbr -a -g gtop git rev-parse --show-toplevel
 abbr -a -g gurl git config --get remote.origin.url
 abbr -a -g runsv python -m SimpleHTTPServer
 
-function breeze_uninstall
+function _breeze_uninstall -e breeze_uninstall
 	abbr -e cdgtop
 	abbr -e g
 	abbr -e gaa
