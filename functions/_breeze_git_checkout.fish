@@ -8,7 +8,7 @@ function __git_checkout -a var
             echo 'Number is large.'
             return
         end
-        
+
         set toplevel (git rev-parse --show-toplevel)
         set myarg $arr[$var]
         git checkout $myarg
@@ -55,7 +55,7 @@ function __gco
     end
 end
 
-function gco
+function _breeze_git_checkout
     # TODO: space like, `gco 1 2 3`
     set length (count $argv)
 

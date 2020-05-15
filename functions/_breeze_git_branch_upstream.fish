@@ -16,7 +16,7 @@ function __gbu
     end
 end
 
-function gbu
+function _breeze_git_branch_upstream
     # check path .git
     if test -e '.git'
         # git status

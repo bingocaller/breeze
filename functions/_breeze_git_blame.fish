@@ -1,5 +1,5 @@
 function __git_blame -a var
-    # is numeric 
+    # is numeric
     if [ "$var" -eq "$var" ] 2>/dev/null
         # number
         set myarg $arr[$var]
@@ -41,7 +41,7 @@ function __gbl
     #echo $res[1]end
 end
 
-function gbl
+function _breeze_git_blame
     echo '--'
     # space like, `gbl 1 2 3`
     echo $argv

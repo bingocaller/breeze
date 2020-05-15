@@ -1,7 +1,7 @@
 __breeze_variables
 
 function __git_branch -a var
-    # is numeric 
+    # is numeric
     if [ "$var" -eq "$var" ] 2>/dev/null
         # number
         set myarg $arr[$var]
@@ -9,7 +9,7 @@ function __git_branch -a var
         # -- (hyphen hyphen) compare
         set hyphen (printf "%b" (printf '%s%x' '\x' 45))
         if [ "$myarg" = "$hyphen$hyphen" ] 2>/dev/null
-            set myarg './'$myarg 
+            set myarg './'$myarg
         end
         git branch $op $myarg
     else
@@ -42,7 +42,7 @@ function __gb
 
         # clamp as array length
         if [ $arr_length -lt $last ]
-          set last $arr_length 
+          set last $arr_length
         end
 
         # first < last
@@ -58,7 +58,7 @@ function __gb
     end
 end
 
-function gb
+function _breeze_git_branch
     set op ""
     set length (count $argv)
 

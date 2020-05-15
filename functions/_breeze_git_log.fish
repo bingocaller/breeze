@@ -1,16 +1,16 @@
-function __git_rm -a var
+function __git_log -a var
     # is numeric
     if [ "$var" -eq "$var" ] 2>/dev/null
         # number
         set myarg $arr[$var]
-        git rm $myarg
+        git log $myarg
     else
         # not a number
-        git rm $var
+        git log $var
     end
 end
 
-function __grm
+function __gl
     # number
     set res (string split "-" -- (string trim $argv))
     set first $res[1]
@@ -23,8 +23,8 @@ function __grm
     else
         # just one
         #set myarg $arr[$res]
-        #git rm $myarg
-        __git_rm $res
+        #git log $myarg
+        __git_log $myarg
         return
     end
 
@@ -34,25 +34,20 @@ function __grm
           #for i in (seq $first 1 $last)
           for i in $res
               #set myarg $arr[$i]
-              #git rm $myarg
-              __git_rm $i
+              #git log $myarg
+              __git_log $i
           end
         else
           echo 'argument is not valid.'
         end
     else
         #set myarg $arr[$first]
-        #git rm $myarg
-        __git_rm $first
+        #git log $myarg
+        __git_log $first
     end
     #echo $res[1]end
 end
 
-function grm
-    # TODO: space like, `grm 1 2 3`
-    set res (string split " " -- (string trim $argv))
-    for i in $res
-        #echo $i
-        __gco $i
-    end
+function _breeze_git_log
+    __gl $argv
 end

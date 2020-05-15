@@ -3,7 +3,7 @@ __breeze_variables
 function __git_add -a var
     set toplevel (git rev-parse --show-toplevel)
 
-    # is numeric 
+    # is numeric
     if [ "$var" -eq "$var" ] 2>/dev/null
         # number
         set myarg $arr[$var]
@@ -11,7 +11,7 @@ function __git_add -a var
         # -- (hyphen hyphen) compare
         set hyphen (printf "%b" (printf '%s%x' '\x' 45))
         if [ "$myarg" = "$hyphen$hyphen" ] 2>/dev/null
-            set myarg './'$myarg 
+            set myarg './'$myarg
         end
 
         git add $toplevel/$myarg
@@ -44,7 +44,7 @@ function __ga
 
         # clamp as array length
         if [ $arr_length -lt $last ]
-          set last $arr_length 
+          set last $arr_length
         end
 
         # first < last
@@ -60,7 +60,7 @@ function __ga
     end
 end
 
-function ga
+function _breeze_git_add
     # space like, `ga 1 2 3`
     set res (string split " " -- (string trim $argv))
     set length (count $res)

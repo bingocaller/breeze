@@ -43,7 +43,7 @@ function __gd
     #echo $res[1]end
 end
 
-function gd
+function _breeze_git_diff
     # Deal with arguments one-by-one
     for i in $argv
         __gd $i

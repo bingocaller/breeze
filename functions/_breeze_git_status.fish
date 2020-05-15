@@ -189,7 +189,7 @@ function __gs -a flags -d "group statuses by state and print to screen"
     __print
 end
 
-function gs $argv
+function _breeze_git_status $argv
     set res (git rev-parse --is-inside-work-tree)
     if [ $res = 'true' ]
         __set_variables
